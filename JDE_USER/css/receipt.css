@@ -1,0 +1,410 @@
+:root {
+    --primary-gold: #D6B25E;
+    --primary-dark-blue: #0A1D37;
+    --success-green: #4BB543;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-dark-blue);
+}
+
+.receipt-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Success Header Card */
+.success-banner {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    border-top: 5px solid var(--success-green);
+}
+
+.success-icon {
+    font-size: 40px;
+    color: var(--success-green);
+    margin-bottom: 15px;
+}
+
+/* --- MODERN ON-SCREEN UI --- */
+.receipt-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-dark-blue);
+}
+
+.card-title i {
+    color: var(--primary-gold);
+}
+
+.order-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.meta-item label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.meta-item span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.order-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: rgba(75, 181, 67, 0.1);
+    color: var(--success-green);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.purchased-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.purchased-item:last-child {
+    border-bottom: none;
+}
+
+.item-img-wrapper {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-light);
+    border: 1px solid #eee;
+}
+
+.item-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.item-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.item-price-qty {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.item-total {
+    font-weight: 700;
+    color: var(--primary-gold);
+}
+
+.customer-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.customer-item label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.customer-item p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-total {
+    border-top: 2px solid #f1f1f1;
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.payment-method-badge {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.payment-method-badge i {
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+}
+
+.btn-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.btn-premium {
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-gold {
+    background: var(--primary-gold);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid #ddd;
+    color: #666;
+}
+
+/* --- POS PRINT LAYOUT (Hidden on Screen) --- */
+.pos-receipt {
+    display: none;
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 !important;
+    padding: 10px 25px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pos-divider {
+    border-top: 1px dashed #333;
+    margin: 15px 0;
+}
+
+.pos-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pos-logo-container {
+    margin-bottom: 10px;
+}
+
+.pos-logo {
+    max-width: 80px;
+    filter: grayscale(100%);
+}
+
+.pos-store-name {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 5px 0;
+}
+
+.pos-store-info {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.pos-section {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.pos-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.pos-items-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.pos-items-list {
+    margin-bottom: 15px;
+}
+
+.pos-item {
+    margin-bottom: 15px;
+}
+
+.pos-item-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pos-item-name {
+    flex: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.pos-item-qty {
+    flex: 1;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.pos-item-total {
+    flex: 0 0 80px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.pos-totals {
+    font-size: 1rem;
+}
+
+.pos-grand-total {
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+.pos-paid {
+    color: #28a745 !important;
+    font-weight: bold;
+}
+
+.pos-balance {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+.pos-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+}
+
+.pos-qr-container {
+    padding: 15px 0;
+    font-size: 3rem;
+}
+
+.pos-thank-you {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.pos-mini-note {
+    font-style: italic;
+    color: #999;
+    font-size: 0.7rem;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .receipt-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+
+    .receipt-grid,
+    .btn-actions,
+    .success-banner,
+    .navbar,
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .receipt-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .pos-receipt {
+        display: block !important;
+        position: static !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 20px !important;
+    }
+}

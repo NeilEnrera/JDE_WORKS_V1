@@ -1,0 +1,324 @@
+:root {
+    --primary-dark-blue: #052b47;
+    --primary-gold: #d6b25e;
+    --bg-light: #f8f9fa;
+}
+
+.orders-section {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.page-title {
+    color: var(--primary-dark-blue);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Tabs */
+.order-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.tab-link {
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    background: white;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: all 0.2s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tab-link:hover {
+    color: var(--primary-gold);
+}
+
+.tab-link.active {
+    background: var(--primary-dark-blue);
+    color: white;
+}
+
+/* Order Card */
+.order-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.order-card-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+}
+
+.order-id {
+    font-weight: 600;
+    color: var(--primary-dark-blue);
+}
+
+.order-date {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.order-body {
+    padding: 1.5rem;
+}
+
+.item-preview {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.item-preview:last-child {
+    border-bottom: none;
+}
+
+.item-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.item-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.order-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-badge {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background: #fff8e1;
+    color: #f57c00;
+}
+
+.status-processing {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-shipped {
+    background: #e8f5e9;
+    color: #388e3c;
+}
+
+.status-delivered {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-cancelled {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.btn-details {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-details:hover {
+    background: var(--primary-gold);
+    color: white;
+}
+
+.btn-cancel {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    background: transparent;
+}
+
+.btn-cancel:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-outline-gold {
+    color: #d6b25e;
+    border-color: #d6b25e;
+}
+.btn-outline-gold:hover {
+    background-color: #d6b25e;
+    color: #fff;
+}
+.btn-gold {
+    background-color: #d6b25e;
+    border-color: #d6b25e;
+}
+.btn-gold:hover {
+    background-color: #c49e4a;
+    border-color: #c49e4a;
+}
+
+.empty-orders {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 16px;
+}
+
+/* History Table Row Hover */
+.recent-orders-table tbody .history-row {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.recent-orders-table tbody .history-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background-color: #fff !important;
+    position: relative;
+    z-index: 5;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    color: #dee2e6;
+    margin-bottom: 1.5rem;
+}
+/* Minimalist Modal Overrides */
+#cancelConfirmModal .btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    color: #2d3436;
+}
+
+#cancelConfirmModal .btn-danger:hover {
+    background-color: #ff5252;
+    transform: translateY(-1px);
+}
+
+/* Pagination & Layout Stability */
+.orders-list-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+    /* Anchors the layout for consistent pagination position */
+}
+
+.orders-list {
+    flex-grow: 1;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    border-top: 1px dashed rgba(0, 0, 0, 0.05);
+}
+
+.pagination-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--primary-dark-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.pagination-btn:hover {
+    background: #fdfaf3;
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(214, 178, 94, 0.1);
+}
+
+.pagination-btn.active {
+    background: var(--primary-dark-blue);
+    color: white;
+    border-color: var(--primary-dark-blue);
+    box-shadow: 0 8px 20px rgba(5, 43, 71, 0.2);
+}
+
+.pagination-btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    background: #f8f9fa;
+}
+
+.pagination-btn.prev-next {
+    width: auto;
+    padding: 0 1.25rem;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+.pagination-ellipsis {
+    color: #ccc;
+    font-weight: bold;
+}
+
+@media (max-width: 576px) {
+    .pagination-container {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .pagination-btn {
+        width: 38px;
+        height: 38px;
+    }
+}

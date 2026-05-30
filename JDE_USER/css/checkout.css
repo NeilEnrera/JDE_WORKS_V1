@@ -1,0 +1,332 @@
+/* Specific Checkout Styles */
+body {
+    background-color: var(--color-brown);
+}
+
+.checkout-form-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.section-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-dark-blue);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-header h3 i {
+    color: var(--primary-gold);
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--primary-dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 4px rgba(214, 178, 94, 0.1);
+}
+
+/* Payment Methods */
+.payment-option {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-option:hover {
+    border-color: #ddd;
+    background: #fdfdfd;
+}
+
+.payment-option.selected,
+.distribution-option.selected {
+    border-color: var(--primary-gold);
+    background: rgba(214, 178, 94, 0.02);
+    box-shadow: 0 4px 12px rgba(214, 178, 94, 0.1);
+}
+
+.distribution-option {
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.distribution-option:hover {
+    border-color: #ddd;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+}
+
+.order-item-mini {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.order-item-mini:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.order-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.order-info h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: var(--primary-dark-blue);
+}
+
+.order-meta {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.order-actions {
+    min-width: 100px;
+}
+
+.order-price {
+    font-size: 0.95rem;
+}
+
+.btn-place-order,
+.btn-continue-to-payment {
+    background: var(--primary-dark-blue);
+    color: #ffffff !important;
+    width: 100%;
+    padding: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(5, 43, 71, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-place-order:hover,
+.btn-continue-to-payment:hover {
+    background: var(--primary-gold) !important;
+    color: var(--primary-dark-blue) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(214, 163, 71, 0.2) !important;
+}
+
+.btn-place-order i {
+    font-size: 1.2rem;
+}
+
+/* Validation Style */
+.is-invalid {
+    border-color: #dc3545 !important;
+    background-image: none !important;
+    /* Remove bootstrap icon */
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+/* Quantity Selector in Summary */
+.checkout-qty-selector {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 2px;
+    border: 1px solid #eee;
+}
+
+.checkout-qty-selector button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--primary-dark-blue);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.checkout-qty-selector button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.qty-display {
+    min-width: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 4px;
+}
+
+/* Flatpickr Custom Theme Overrides */
+.flatpickr-calendar {
+    box-shadow: 0 10px 30px rgba(5, 43, 71, 0.15) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: 12px !important;
+    padding: 10px !important;
+    width: auto !important;
+    box-sizing: content-box !important;
+    font-family: inherit !important;
+}
+
+.flatpickr-months {
+    background: transparent !important;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month .numInputWrapper {
+    color: var(--primary-dark-blue) !important;
+    font-weight: 700 !important;
+}
+
+.flatpickr-month {
+    color: var(--primary-dark-blue) !important;
+    fill: var(--primary-dark-blue) !important;
+}
+
+.flatpickr-weekday {
+    color: #888 !important;
+    font-weight: 600 !important;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+    background: var(--primary-gold) !important;
+    border-color: var(--primary-gold) !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(214, 178, 94, 0.3) !important;
+    font-weight: 600;
+}
+
+.flatpickr-day:hover {
+    background: rgba(214, 178, 94, 0.1) !important;
+    border-color: rgba(214, 178, 94, 0.2) !important;
+    color: var(--primary-dark-blue) !important;
+}
+
+.flatpickr-day.today {
+    border-color: var(--primary-gold) !important;
+}
+
+.flatpickr-day {
+    color: var(--primary-dark-blue) !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
+}
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+    color: #ccc !important;
+}
+
+/* High-Visibility Terms Style */
+.highlight-terms {
+    color: #c49e4a !important; /* Deep Gold */
+    font-weight: 800 !important; /* Extra Bold */
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.highlight-terms:hover {
+    color: #a68439 !important;
+}
+
+/* Ensure label visibility even if checkbox is disabled */
+.form-check-input:disabled ~ .form-check-label {
+    opacity: 1 !important;
+    color: var(--primary-dark-blue) !important;
+}

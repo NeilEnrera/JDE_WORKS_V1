@@ -1,0 +1,37 @@
+# JDE Works - Backend Security Policy
+
+# 1. Prevent Directory Browsing
+Options -Indexes
+
+# 2. Protect Database Connection and Config Files
+<FilesMatch "^(db_connection|db_.*)\.php$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 3. Protect Log and JSON configuration files
+<FilesMatch "\.(log|json)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 4. Prevent access to hidden folders and VCS metadata
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>

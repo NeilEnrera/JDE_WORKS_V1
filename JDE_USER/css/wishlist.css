@@ -1,0 +1,270 @@
+/* Wishlist Page Styles */
+:root {
+    --premium-gold: #c5a059;
+    --premium-dark: #1a1a1a;
+    --premium-bg: #fdfaf5;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.wishlist-container {
+    padding: 60px 24px;
+    min-height: 70vh;
+    overflow-x: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header & Controls */
+.wishlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.wishlist-title-group h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--premium-dark);
+    margin-bottom: 5px;
+}
+
+.wishlist-count {
+    color: var(--premium-gold);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.wishlist-actions-top {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-bulk-add {
+    background: linear-gradient(135deg, var(--premium-gold), #b38b4d);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.btn-bulk-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+    color: white;
+}
+
+/* Grid & Card Fixes (Overriding product.css 110% width hacks) */
+.wishlist-page .products-grid {
+    width: 100% !important;
+    margin-left: 0 !important;
+    gap: 2.5rem !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+}
+
+.wishlist-page .product-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background: white !important;
+    border-radius: 24px !important;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 0;
+    /* For staggered animation */
+    transform: translateY(20px);
+}
+
+.wishlist-page .product-item.appeared {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wishlist-page .product-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+    border-color: var(--premium-gold);
+}
+
+.wishlist-page .product-image-wrapper {
+    margin-bottom: 1.5rem !important;
+    border-radius: 16px !important;
+}
+
+.wishlist-page .product-info {
+    padding: 0 !important;
+    /* Reset padding to use card padding */
+    backdrop-filter: blur(8px);
+    background: var(--glass-bg);
+    border-top: none !important;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.wishlist-page .product-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.wishlist-page .product-price {
+    font-weight: 700;
+    color: var(--premium-dark);
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.wishlist-page .order-button-new {
+    background: var(--premium-dark);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.wishlist-page .order-button-new:hover {
+    background: var(--premium-gold);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+/* Empty State Enhancement */
+.empty-wishlist-hero {
+    background: white;
+    padding: 80px 40px;
+    border-radius: 30px;
+    box-shadow: var(--glass-shadow);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.empty-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    background: var(--premium-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.empty-icon-wrapper i {
+    font-size: 3rem;
+    color: var(--premium-gold);
+}
+
+.empty-icon-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed var(--premium-gold);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.empty-wishlist-hero h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.empty-wishlist-hero p {
+    color: #777;
+    margin-bottom: 35px;
+    font-size: 1.1rem;
+}
+
+.btn-premium-action {
+    background: var(--premium-dark);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-premium-action:hover {
+    background: var(--premium-gold);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+}
+
+/* Premium Confirmation Modal */
+.premium-modal .modal-content {
+    background: var(--premium-bg);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.premium-modal-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--premium-dark);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 1.5rem;
+}
+
+.premium-modal .modal-title {
+    color: var(--premium-dark);
+    text-align: center;
+    width: 100%;
+}
+
+.premium-modal .btn-premium-action {
+    background: var(--premium-dark);
+    margin-bottom: 0;
+}
+
+.premium-modal .btn-premium-action:hover {
+    background: var(--premium-gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .wishlist-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .wishlist-title-group h2 {
+        font-size: 2rem;
+    }
+}

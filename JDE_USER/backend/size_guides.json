@@ -1,0 +1,91 @@
+{
+    "Tourism": {
+        "guide": [
+            { "size": "XS", "bust": 32, "shoulder": 14, "waist": 26, "surcharge": 0 },
+            { "size": "S",  "bust": 34, "shoulder": 14.5, "waist": 28, "surcharge": 0 },
+            { "size": "M",  "bust": 36, "shoulder": 15, "waist": 30, "surcharge": 0 },
+            { "size": "L",  "bust": 38, "shoulder": 15.5, "waist": 32, "surcharge": 0 },
+            { "size": "XL", "bust": 40, "shoulder": 16, "waist": 34, "surcharge": 0 },
+            { "size": "2XL", "bust": 42, "shoulder": 16.5, "waist": 36, "surcharge": 150 },
+            { "size": "3XL", "bust": 44, "shoulder": 17, "waist": 38, "surcharge": 200 },
+            { "size": "4XL", "bust": 46, "shoulder": 17.5, "waist": 40, "surcharge": 250 },
+            { "size": "5XL", "bust": 48, "shoulder": 18, "waist": 42, "surcharge": 300 },
+            { "size": "6XL", "bust": 50, "shoulder": 18.5, "waist": 44, "surcharge": 350 }
+        ],
+        "mapping": { "bust": "chest", "shoulder": "shoulder", "waist": "waist" }
+    },
+    "Allied Health": {
+        "guide": [
+            { "size": "XS",  "chest": 36, "shoulder": 17, "waist": 28, "surcharge": 0 },
+            { "size": "S",   "chest": 38, "shoulder": 17.5, "waist": 30, "surcharge": 0 },
+            { "size": "M",   "chest": 40, "shoulder": 18, "waist": 32, "surcharge": 0 },
+            { "size": "L",   "chest": 42, "shoulder": 18.5, "waist": 34, "surcharge": 0 },
+            { "size": "XL",  "chest": 44, "shoulder": 19, "waist": 36, "surcharge": 0 },
+            { "size": "2XL", "chest": 46, "shoulder": 20, "waist": 38, "surcharge": 150 },
+            { "size": "3XL", "chest": 48, "shoulder": 21, "waist": 40, "surcharge": 200 },
+            { "size": "4XL", "chest": 50, "shoulder": 22, "waist": 42, "surcharge": 250 },
+            { "size": "5XL", "chest": 52, "shoulder": 23, "waist": 44, "surcharge": 300 },
+            { "size": "6XL", "chest": 54, "shoulder": 24, "waist": 46, "surcharge": 350 }
+        ],
+        "mapping": { "chest": "chest", "shoulder": "shoulder", "waist": "waist" }
+    },
+    "Nursing": {
+        "guide": [
+            { "size": "XS", "bust": 32, "waist": 26, "length": 22.5, "surcharge": 0 },
+            { "size": "S",  "bust": 34, "waist": 28, "length": 23, "surcharge": 0 },
+            { "size": "M",  "bust": 36, "waist": 30, "length": 24, "surcharge": 0 },
+            { "size": "L",  "bust": 38, "waist": 32, "length": 25, "surcharge": 0 },
+            { "size": "XL", "bust": 40, "waist": 34, "length": 26, "surcharge": 0 },
+            { "size": "2XL", "bust": 42, "waist": 36, "length": 27, "surcharge": 150 },
+            { "size": "3XL", "bust": 44, "waist": 38, "length": 28, "surcharge": 200 },
+            { "size": "4XL", "bust": 46, "waist": 40, "length": 29, "surcharge": 250 },
+            { "size": "5XL", "bust": 48, "waist": 42, "length": 30, "surcharge": 300 },
+            { "size": "6XL", "bust": 50, "waist": 44, "length": 31, "surcharge": 350 }
+        ],
+        "mapping": { "bust": "chest", "waist": "waist", "length": "pants-length" }
+    },
+    "SHS": {
+        "guide": [
+            { "size": "XS",  "bust": 31, "waist": 26, "surcharge": 0 },
+            { "size": "S",   "bust": 32, "waist": 27, "surcharge": 0 },
+            { "size": "M",   "bust": 34, "waist": 28, "surcharge": 0 },
+            { "size": "L",   "bust": 36, "waist": 30, "surcharge": 0 },
+            { "size": "XL",  "bust": 38, "waist": 32, "surcharge": 0 },
+            { "size": "2XL", "bust": 40, "waist": 34, "surcharge": 100 },
+            { "size": "3XL", "bust": 42, "waist": 36, "surcharge": 150 },
+            { "size": "4XL", "bust": 44, "waist": 38, "surcharge": 200 },
+            { "size": "5XL", "bust": 46, "waist": 40, "surcharge": 250 },
+            { "size": "6XL", "bust": 48, "waist": 42, "surcharge": 300 }
+        ],
+        "mapping": { "bust": "chest", "waist": "waist" }
+    },
+    "PE": {
+        "guide": [
+            { "size": "Small",  "tchest": 18.5, "tlength": 25, "pwaist": 26, "surcharge": 0 },
+            { "size": "Medium", "tchest": 19.5, "tlength": 26, "pwaist": 28, "surcharge": 0 },
+            { "size": "Large",  "tchest": 20.5, "tlength": 27, "pwaist": 30, "surcharge": 0 },
+            { "size": "XL",     "tchest": 21.5, "tlength": 28, "pwaist": 32, "surcharge": 0 },
+            { "size": "2XL",    "tchest": 23,   "tlength": 29, "pwaist": 34, "surcharge": 150 },
+            { "size": "3XL",    "tchest": 24.5, "tlength": 30, "pwaist": 36, "surcharge": 200 },
+            { "size": "4XL",    "tchest": 26,   "tlength": 31, "pwaist": 38, "surcharge": 250 },
+            { "size": "5XL",    "tchest": 27.5, "tlength": 32, "pwaist": 40, "surcharge": 300 },
+            { "size": "6XL",    "tchest": 29,   "tlength": 33, "pwaist": 42, "surcharge": 350 }
+        ],
+        "mapping": { "tchest": "chest", "tlength": "pants-length", "pwaist": "waist" }
+    },
+    "Culinary": {
+        "guide": [
+            { "size": "XS",  "chest": 37,   "length": 26, "shoulder": 16.5, "surcharge": 0 },
+            { "size": "S",   "chest": 39,   "length": 27, "shoulder": 17,   "surcharge": 0 },
+            { "size": "M",   "chest": 41,   "length": 28, "shoulder": 18,   "surcharge": 0 },
+            { "size": "L",   "chest": 43,   "length": 29, "shoulder": 19,   "surcharge": 0 },
+            { "size": "XL",  "chest": 45,   "length": 30, "shoulder": 20,   "surcharge": 0 },
+            { "size": "2XL", "chest": 47.5, "length": 31, "shoulder": 21,   "surcharge": 150 },
+            { "size": "3XL", "chest": 50,   "length": 32, "shoulder": 22,   "surcharge": 200 },
+            { "size": "4XL", "chest": 52.5, "length": 33, "shoulder": 23,   "surcharge": 250 },
+            { "size": "5XL", "chest": 55,   "length": 34, "shoulder": 24,   "surcharge": 300 },
+            { "size": "6XL", "chest": 57.5, "length": 35, "shoulder": 25,   "surcharge": 350 }
+        ],
+        "mapping": { "chest": "chest", "length": "pants-length", "shoulder": "shoulder" }
+    }
+}

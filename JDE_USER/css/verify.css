@@ -1,0 +1,247 @@
+/* ============================================================
+   verify.css — Email Verification Page Styles
+   Aligned with JDE Works brand: photo background + navy card + gold accents
+   ============================================================ */
+
+/* ── Design Tokens ── */
+:root {
+    --color-navy:         #012B43;
+    --color-navy-dark:    #011e30;
+    --color-gold:         #D6A347;
+    --color-gold-hover:   #e8b456;
+    --color-gold-muted:   rgba(214, 163, 71, 0.15);
+    --color-gold-border:  rgba(214, 163, 71, 0.35);
+    --color-white:        #ffffff;
+    --color-text-body:    rgba(255, 255, 255, 0.75);
+    --color-text-muted:   rgba(255, 255, 255, 0.42);
+
+    --shadow-card: 0 25px 60px rgba(0, 0, 0, 0.55), 0 8px 20px rgba(0, 0, 0, 0.35);
+
+    --radius-card:   18px;
+    --radius-icon:   9999px;
+    --radius-btn:    8px;
+    --radius-pill:   9999px;
+    --radius-logo:   10px;
+
+    --transition-base: 220ms ease;
+    --transition-slow: 350ms ease;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Body: photo background matching signin.css exactly ── */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Darkened blurred photo background — mirrors signin.css */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../assets/img/haha.jpg') center center / cover no-repeat;
+    filter: brightness(0.4) blur(3px);
+    z-index: -1;
+}
+
+/* ── Verify Card — mirrors .form-container from signin.css ── */
+.verify-card {
+    position: relative;
+    background: rgba(1, 43, 67, 0.98);
+    padding: 44px 40px 40px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    width: 420px;
+    max-width: 95%;
+    text-align: center;
+    animation: cardFadeUp 0.45s cubic-bezier(0.22, 0.68, 0, 1.1) forwards;
+}
+
+@keyframes cardFadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Gold top accent bar */
+.verify-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-hover));
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+}
+
+/* ── Logo — mirrors signin.css .logo img ── */
+.logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.logo-wrap img {
+    border: 3px solid var(--color-gold);
+    border-radius: var(--radius-logo);
+    padding: 8px 16px;
+    background: var(--color-white);
+    width: 120px;
+    height: auto;
+}
+
+/* ── Status Icon ── */
+.icon-bubble {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-icon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    font-size: 28px;
+    animation: iconPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both;
+}
+
+@keyframes iconPop {
+    from { opacity: 0; transform: scale(0.5); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.icon-success {
+    background: rgba(46, 204, 113, 0.18);
+    border: 2px solid rgba(46, 204, 113, 0.45);
+    color: #2ecc71;
+}
+
+.icon-error {
+    background: rgba(255, 77, 77, 0.15);
+    border: 2px solid rgba(255, 77, 77, 0.40);
+    color: #ff4d4d;
+}
+
+/* ── Headline ── */
+.verify-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+}
+
+.verify-msg {
+    font-size: 0.90rem;
+    color: var(--color-text-body);
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+/* ── Divider — gold tinted, mirrors signin.css divider ── */
+.verify-divider {
+    height: 1px;
+    background: rgba(214, 163, 71, 0.2);
+    margin: 26px 0;
+}
+
+/* ── Timer Pill ── */
+.timer-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-gold-muted);
+    border: 1px solid var(--color-gold-border);
+    border-radius: var(--radius-pill);
+    padding: 7px 18px;
+    font-size: 0.80rem;
+    color: var(--color-gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#timer-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: var(--color-gold);
+    color: var(--color-navy);
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+/* ── CTA Button — mirrors .signup-btn from signin.css ── */
+.btn-verify {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    padding: 14px 0;
+    background: var(--color-gold);
+    color: var(--color-navy);
+    border-radius: var(--radius-btn);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    transition: background var(--transition-base),
+                transform var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+.btn-verify:hover {
+    background: var(--color-gold-hover);
+    color: var(--color-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(214, 163, 71, 0.35);
+}
+
+.btn-verify:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(214, 163, 71, 0.25);
+}
+
+/* ── Footer Note ── */
+.already-note {
+    margin-top: 18px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+.already-note strong {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+/* ── Confetti canvas (success only) ── */
+#confetti-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .verify-card    { padding: 34px 22px 30px; }
+    .verify-title   { font-size: 1.30rem; }
+    .logo-wrap img  { width: 100px; }
+}
